@@ -8,7 +8,8 @@ def login() {
 }
 
 def build(String tag,String file_name) {
-    def scriptcontents = readFile 'workspace/docker-build-push/resources/Dockerfile'
+    sh 'ls -R'
+    def scriptcontents = readFile 'resources/Dockerfile'
     writeFile file: 'Dockerfile', text: scriptcontents  
 
     sh """
