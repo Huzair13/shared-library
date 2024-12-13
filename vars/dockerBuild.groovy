@@ -7,10 +7,8 @@ def login() {
 }
 
 def build(String tag,String file_name) {
-    sh 'ls -R'
-    def scriptcontents = readFile 'resources/Dockerfile'
-    writeFile file: 'Dockerfile', text: scriptcontents  
-
+    def scriptcontents = libraryResource "Dockerfile"
+    writeFile file:"Dockerfile", text: scriptcontents  
     sh """
         docker build --build-arg file_name="${file_name}" -t "${tag}"  .
     """
