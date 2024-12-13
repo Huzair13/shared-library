@@ -1,4 +1,4 @@
-# just give your credentialsId for the docker repo that you have saved in the Jenkins credentials manager.
+// just give your credentialsId for the docker repo that you have saved in the Jenkins credentials manager.
 def login() {
     withCredentials([usernamePassword(credentialsId: '80bc73ba-89dc-4de0-8cde-ddcf63e85680', usernameVariable: 'username', passwordVariable: 'password')]) {
         sh """
